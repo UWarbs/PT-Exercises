@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--Put title with logo here-->
+    <TextView
+        style="@style/textBox"
+        android:text="@string/welcome1" />
+    <TextView
+        style="@style/textBox"
+        android:text="@string/or" />
+    <TextView
+        style="@style/textBox"
+        android:text="@string/welcome2" />
+    <TextView
+        style="@style/textBox"
+        android:text="@string/clickOne" />
+    <Button
+        style="@style/frontButton"
+        android:onClick="backView"
+        android:text="@string/backView" />
+
+    <Button
+        style="@style/frontButton"
+        android:onClick="kneeView"
+        android:text="@string/kneeView"/>
+    <Button
+        style="@style/frontButton"
+        android:onClick="ankleView"
+        android:text="@string/ankleView"/>
+    <Button
+        style="@style/frontButton"
+        android:onClick="neckView"
+        android:text="@string/neckView"/>
+    <Button
+        style="@style/frontButton"
+        android:onClick="shoulderView"
+        android:text="@string/shoulderView"/>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/exercise_page_layout"
+    tools:context="com.warbis.ptexercises.DisplayNeckActivity">
+
+    <TextView
+        style="@style/textBox"
+        android:text="@string/stretches" />
+    <Button
+        style="@style/exercise_page_button"
+        android:text="@string/neck_stretch"/>
+
+</LinearLayout>

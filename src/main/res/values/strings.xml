@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--FRONT VIEW-->
+    <string name="app_name">PT Exercises</string>
+    <string name="welcome1">Welcome! This app aims to help you remember, complete, and improve your physical therapy exercises.</string>
+    <string name="or">OR</string>
+    <string name="welcome2">Maybe you just want a more healthy, less injury-prone body!</string>
+    <string name="clickOne">Select the body part to improve!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_display_message">My Message</string>
+    <string name="action_search">Search</string>
+    <string name="kneeView">Knee</string>
+    <string name="backView">Back</string>
+    <string name="ankleView">Ankle</string>
+    <string name="neckView">Neck</string>
+    <string name="shoulderView">Shoulder</string>
+
+    <!--EXERCISE VIEW-->
+    <string name="title_activity_display_back">Back Exercises</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_display_knee">Knee Exercises</string>
+    <string name="title_activity_display_ankle">Ankle Exercises</string>
+    <string name="title_activity_display_neck">Neck Exercises</string>
+    <string name="title_activity_display_shoulder">Shoulder Exercises</string>
+    <!--BACK-->
+    <string name="upper_back">Upper Back</string>
+    <string name="face_pulls">Face Pulls</string>
+    <!--ANKLE-->
+    <string name="balance">Balance</string>
+    <string name="one_leg_stand">Single Leg Stand</string>
+    <!--KNEE-->
+    <string name="squat">Squat</string>
+    <!--NECK-->
+    <string name="stretches">Stretches</string>
+    <string name="neck_stretch">Neck Stretch</string>
+    <!--SHOULDER-->
+
+</resources>

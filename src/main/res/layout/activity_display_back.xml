@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        style="@style/exercise_page_layout"
+        tools:context="com.warbis.ptexercises.DisplayBackActivity">
+    <!--Here put an image of back split into upper/lower back so people know what to choose-->
+
+    <TextView
+        style="@style/textBox"
+        android:text="@string/upper_back" />
+    <Button
+        style="@style/exercise_page_button"
+        android:onClick="face_pulls"
+        android:text="@string/face_pulls"/>
+ </LinearLayout>

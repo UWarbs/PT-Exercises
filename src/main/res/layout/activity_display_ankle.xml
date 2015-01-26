@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/exercise_page_layout"
+    tools:context="com.warbis.ptexercises.DisplayAnkleActivity">
+
+    <TextView
+        style="@style/textBox"
+        android:text="@string/balance" />
+    <Button
+        style="@style/exercise_page_button"
+        android:text="@string/one_leg_stand"/>
+
+</LinearLayout>

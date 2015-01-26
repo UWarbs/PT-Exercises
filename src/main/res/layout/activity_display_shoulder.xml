@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/exercise_page_layout"
+    tools:context="com.warbis.ptexercises.DisplayShoulderActivity">
+
+    <TextView
+        style="@style/textBox"
+        android:text="@string/stretches" />
+    <!--Look up shoulder stretches yo -->
+    <Button
+        style="@style/exercise_page_button"
+        android:text="@string/face_pulls"/>
+
+</LinearLayout>
