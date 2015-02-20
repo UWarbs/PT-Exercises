@@ -16,26 +16,44 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class DisplayExerciseActivity extends Activity {
 
     ViewPager mViewPager;
     SlideShowPagerAdapter mSlideShowPagerAdapter;
+//    public static final List<MainActivity.Exercise> neckExercises = new ArrayList<MainActivity.Exercise>();
+
+
 
     int[] mResources = {
             R.drawable.evil_smile,
             R.drawable.ic_launcher
     };
+    int[] uris;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_exercise);
 
+        //Initialize Neck Exercises
+        //Maybe this activity should stay the same, and in the DisplayEXerciseActivity
+        //It should check the child that was clicked on, and add all the data then.
+//        int[] extensorUris = {R.drawable.ic_launcher, R.drawable.evil_smile};
+//        Exercise extensorStretch = new Exercise("Extensor Stretch", "This stretches the extensor muscles in your neck", extensorUris);
+//        Exercise levatorStretch = new Exercise("Levator Scapula Stretch", "Stretches your Levator scapula, feels good man", extensorUris);
+//        neckExercises.add(extensorStretch);
+//        neckExercises.add(levatorStretch);
+
         //See if I can push image URI into mResources array from here
         Intent intent = getIntent();
         String exerciseName = intent.getStringExtra("exercise");
         String description = intent.getStringExtra("description");
+        uris = intent.getIntArrayExtra("uris");
+
         TextView exerciseTitle = (TextView) findViewById(R.id.exerciseName);
         TextView exerciseDescription = (TextView) findViewById(R.id.exerciseDescription);
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -62,7 +80,7 @@ public class DisplayExerciseActivity extends Activity {
 
         @Override
         public int getCount(){
-            return mResources.length;
+            return uris.length;
         }
 
         @Override
@@ -75,7 +93,7 @@ public class DisplayExerciseActivity extends Activity {
             View itemView = mLayoutInflater.inflate(R.layout.image_item, container, false);
 
             ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
-            imageView.setImageResource(mResources[position]);
+            imageView.setImageResource(uris[position]);
 
             container.addView(itemView);
             return itemView;

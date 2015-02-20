@@ -46,13 +46,42 @@
         <item name="a4">Knee</item>
         <item name="a5">Ankle</item>
     </string-array>
+    <!--NECK-->
     <string-array name="neckExercises">
-        <item name="a1">Extensor Stretch</item>
-        <item name="a2">Levator Scapula Stretch</item>
-        <item name="a3">Upper Trapezius Stretch</item>
-        <item name="a4">Sternocleidomastoid Stretch</item>
+        <item name="b1">Extensor Stretch</item>
+        <item name="b2">Levator Scapula Stretch</item>
+        <item name="b3">Upper Trapezius Stretch</item>
+        <item name="b4">Sternocleidomastoid Stretch</item>
     </string-array>
-
+    <string-array name="extensorStretch">
+        <item name="description">This stretches your extensors, the above images show proper technique</item>
+    </string-array>
+    <!--END NECK-->
+    <string-array name="backExercises">
+        <item name="b1">Rows</item>
+        <item name="b2">Face Pulls</item>
+        <item name="b3">Lat Pulldowns</item>
+        <item name="b4">Straight Bar Pulldowns</item>
+        <item name="b5">Bridge</item>
+    </string-array>
+    <string-array name="shoulderExercises">
+        <item name="b1">Shoulder Press</item>
+        <item name="b2">Rotator Cuff</item>
+        <item name="b3">Lateral Raises</item>
+        <item name="b4">Upright Row</item>
+        <item name="b5">Shoulder Stretch</item>
+    </string-array>
+    <string-array name="abExercises">
+        <!--standing too-->
+        <item name="b1">Superman</item>
+        <item name="b2">Wall Sit</item>
+    </string-array>
+    <string-array name="kneeExercises">
+        <item name="b1">Squat</item>
+        <item name="b2">Lunges</item>
+        <item name="b3">Quad Set</item>
+        <item name="b4">Band Walks</item>
+    </string-array>
     <string name="title_activity_image_item">image_item</string>
 
 </resources>

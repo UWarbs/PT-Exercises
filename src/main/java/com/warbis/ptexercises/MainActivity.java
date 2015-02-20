@@ -3,6 +3,7 @@ package com.warbis.ptexercises;
 import android.content.Context;
 import android.content.Intent;
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -17,11 +18,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
 public class MainActivity extends Activity {
     SparseArray<Group> groups = new SparseArray<Group>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +39,15 @@ public class MainActivity extends Activity {
     public void createData(){
         String[] bodyParts = this.getResources().getStringArray(R.array.bodyParts);
         String[] neckExercises = this.getResources().getStringArray(R.array.neckExercises);
-        //The arrays of exercises are going to need to be hash map arrays using SparseArray
-        //pass image uri strings with other data for each exercise
-        //name, description(stored in strings.xml, images
+
+        //SETUP EXERCISE BASED ON CHILD NAME
+//            switch(children){
+//                case "Extensor Stretch":
+//                    String[] resArray = getResources().getStringArray(R.array.extensorStretch);
+//                    String exerciseDescription = resArray[0];
+//                    int[] exerciseUris = getResources().getIntArray(R.array.uri);
+//
+//            }
 
         for (int j = 0; j < bodyParts.length; j++){
             Group group = new Group(bodyParts[j]);
@@ -47,6 +56,13 @@ public class MainActivity extends Activity {
                 for(int i = 0; i < neckExercises.length; i++){
                     group.children.add(neckExercises[i]);
                 }
+//                for(int i = 0; i < neckExercises.size(); i++){
+//                    Exercise tempEx = neckExercises.get(i);
+//                    String name = tempEx.getName();
+//                    String desc = tempEx.getDescription();
+//                    int[] uris = tempEx.getUris();
+//                    group.children.add(name);
+//                }
             }else {
                 for (int i = 0; i < 3; i++) {
                     group.children.add("Sub Item " + i);
@@ -79,12 +95,36 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public class Exercise{
+        private String name;
+        private String description;
+        private int[] imageUris;
+
+        public Exercise(String name, String description, int[] uris){
+            this.name = name;
+            this.description = description;
+            this.imageUris = uris;
+        }
+
+        public String getName(){
+            return name;
+        }
+
+        public String getDescription(){
+            return description;
+        }
+
+        public int[] getUris(){
+            return imageUris;
+        }
+    }
+
     public class Group{
-        public String string;
+        public String name;
         public final List<String> children = new ArrayList<String>();
 
-        public Group(String string){
-            this.string = string;
+        public Group(String name){
+            this.name = name;
         }
 
     }
@@ -112,31 +152,37 @@ public class MainActivity extends Activity {
 
         @Override
         public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent){
-          final String children = (String) getChild(groupPosition, childPosition);
-          TextView text = null;
-          if(convertView == null){
-              convertView = inflater.inflate(R.layout.listrow_details, null);
-          }
-          text = (TextView) convertView.findViewById(R.id.textView1);
-          text.setText(children);
-          convertView.setOnClickListener(new View.OnClickListener() {
+            final String children = (String) getChild(groupPosition, childPosition);
+            TextView text = null;
+            if(convertView == null){
+                convertView = inflater.inflate(R.layout.listrow_details, null);
+            }
+            text = (TextView) convertView.findViewById(R.id.textView1);
+            text.setText(children);
 
-              @Override
-              public void onClick(View v) {
-                  Intent intent = new Intent(v.getContext(), DisplayExerciseActivity.class);
-                  intent.putExtra("exercise", children);
-                  //I think create a bundle and use an if check to see which description/images to use.
-                  if(children.equals("Extensor Stretch")){
-                      System.out.println("IF CHECK WORKED MOFO");
-                      intent.putExtra("description", "Extensor Stretch is good for making your neck not get broken and stuff");
-                  }
-                  startActivity(intent);
-                  System.out.println("children");
-                  System.out.println(children);
-                  //This is what pops up that little bubble showing what was clicked.
-                  Toast.makeText(activity, children, Toast.LENGTH_SHORT).show();
-              }
-          });
+
+            String exerciseDescription = "description";
+            int[] exerciseUris = {R.drawable.evil_smile, R.drawable.ic_launcher, R.drawable.evil_smile};
+            final Exercise exercise = new Exercise(children, exerciseDescription, exerciseUris );
+
+            //END SETUP
+
+            convertView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(), DisplayExerciseActivity.class);
+                    intent.putExtra("exercise", exercise.getName());
+                    intent.putExtra("description", exercise.getDescription());
+                    intent.putExtra("uris", exercise.getUris());
+
+                    startActivity(intent);
+                    System.out.println("EX NAME");
+                    System.out.println(exercise.getName());
+                    //This is what pops up that little bubble showing what was clicked.
+                    Toast.makeText(activity, exercise.getName(), Toast.LENGTH_SHORT).show();
+                }
+            });
           return convertView;
         }
 
@@ -178,7 +224,7 @@ public class MainActivity extends Activity {
             }
 
             Group group = (Group) getGroup(groupPosition);
-            ((CheckedTextView) convertView).setText(group.string);
+            ((CheckedTextView) convertView).setText(group.name);
             ((CheckedTextView) convertView).setChecked(isExpanded);
             return convertView;
         }
