@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--FRONT VIEW-->
+    <!-- FRONT VIEW -->
     <string name="app_name">PT Exercises</string>
     <string name="welcome1">Welcome! This app aims to help you remember, complete, and improve your physical therapy exercises.</string>
     <string name="or">OR</string>
@@ -16,24 +16,43 @@
     <string name="neckView">Neck</string>
     <string name="shoulderView">Shoulder</string>
 
-    <!--EXERCISE VIEW-->
+    <!-- EXERCISE VIEW -->
     <string name="title_activity_display_back">Back Exercises</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_display_knee">Knee Exercises</string>
     <string name="title_activity_display_ankle">Ankle Exercises</string>
     <string name="title_activity_display_neck">Neck Exercises</string>
     <string name="title_activity_display_shoulder">Shoulder Exercises</string>
-    <!--BACK-->
+    <!-- BACK -->
     <string name="upper_back">Upper Back</string>
     <string name="face_pulls">Face Pulls</string>
-    <!--ANKLE-->
+    <!-- ANKLE -->
     <string name="balance">Balance</string>
     <string name="one_leg_stand">Single Leg Stand</string>
-    <!--KNEE-->
+    <!-- KNEE -->
     <string name="squat">Squat</string>
-    <!--NECK-->
+    <!-- NECK -->
     <string name="stretches">Stretches</string>
     <string name="neck_stretch">Neck Stretch</string>
-    <!--SHOULDER-->
+    <!-- SHOULDER -->
+
+    <string name="title_activity_display_exercise">PT Exercise</string>
+
+    <!-- Exercise Names -->
+    <string-array name="bodyParts">
+        <item name="a1">Neck</item>
+        <item name="a2">Back</item>
+        <item name="a3">Shoulder</item>
+        <item name="a4">Knee</item>
+        <item name="a5">Ankle</item>
+    </string-array>
+    <string-array name="neckExercises">
+        <item name="a1">Extensor Stretch</item>
+        <item name="a2">Levator Scapula Stretch</item>
+        <item name="a3">Upper Trapezius Stretch</item>
+        <item name="a4">Sternocleidomastoid Stretch</item>
+    </string-array>
+
+    <string name="title_activity_image_item">image_item</string>
 
 </resources>

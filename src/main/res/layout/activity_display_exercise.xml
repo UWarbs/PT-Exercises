@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.warbis.ptexercises.DisplayExerciseActivity">
+
+    <!--Give this a sweet style-->
+    <TextView
+        android:id="@+id/exerciseName"
+        android:text="Exercise Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="30dp"
+        android:paddingTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <!--Add Carousel of pictures of exercise here -->
+    <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+    </android.support.v4.view.ViewPager>
+
+    <!--Add text description of how to perform exercise -->
+    <TextView
+        android:id="@+id/exerciseDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+
+</LinearLayout>

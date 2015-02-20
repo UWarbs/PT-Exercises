@@ -17,44 +17,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DisplayBackActivity"
-            android:label="@string/title_activity_display_back"
+            android:name=".DisplayExerciseActivity"
+            android:label="@string/title_activity_display_exercise"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.warbis.ptexercises.MainActivity" />
         </activity>
         <activity
-            android:name=".DisplayKneeActivity"
-            android:label="@string/title_activity_display_knee"
-            android:parentActivityName=".MainActivity" >
+            android:name=".image_item"
+            android:label="@string/title_activity_image_item"
+            android:parentActivityName=".DisplayExerciseActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.warbis.ptexercises.MainActivity" />
-        </activity>
-        <activity
-            android:name=".DisplayAnkleActivity"
-            android:label="@string/title_activity_display_ankle"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.warbis.ptexercises.MainActivity" />
-        </activity>
-        <activity
-            android:name=".DisplayNeckActivity"
-            android:label="@string/title_activity_display_neck"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.warbis.ptexercises.MainActivity" />
-        </activity>
-        <activity
-            android:name=".DisplayShoulderActivity"
-            android:label="@string/title_activity_display_shoulder"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.warbis.ptexercises.MainActivity" />
+                android:value="com.warbis.ptexercises.DisplayExerciseActivity" />
         </activity>
     </application>
 
